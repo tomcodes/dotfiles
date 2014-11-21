@@ -117,6 +117,9 @@ Plugin 'gmarik/Vundle.vim'
 " PHP QA Tools For Vim - https://github.com/joonty/vim-phpqa
 Bundle 'joonty/vim-phpqa.git'
 
+" Powerline
+Bundle 'Lokaltog/vim-powerline'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
