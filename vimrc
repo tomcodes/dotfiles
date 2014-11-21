@@ -82,6 +82,7 @@ map <leader>t :!phpunit %<cr>
 
 " Powerline
 let g:Powerline_symbols = 'fancy'
+set t_Co=256                        " Set colors
 set laststatus=2                    " Always show the status line
 set encoding=utf-8                  " Necessary to show Unicode glyphs
 set noshowmode                      " Hide the default mode text (e.g. -- INSERT -- below the status line)
@@ -90,7 +91,6 @@ filetype plugin on
 syntax on
 
 set fileformat=unix
-set encoding=utf-8
 set number
 syn on
  
