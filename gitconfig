@@ -1,0 +1,22 @@
+[color]
+        ui = auto
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    lgbr = log --no-merges master.. --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Cgreen%cd%Creset' --abbrev-commit
+    cutelog = log --pretty=format:\"%h - %an - %ar - %s\" --graph
+    shallipush = log origin/master..master --stat --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit
+    standup = log --since yesterday --oneline --author thomas
+    mine = log --author thomas --oneline
+    showfile = diff-tree --no-commit-id --name-only -r
+    l = "!f() { git log $@ --abbrev-commit --date=short --pretty=format:'%x00%h%x00%cd%x00%s%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m \\033[32m%s\\033[0m %-80s \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, $3, gensub(/(.{79}).{2,}/, \"\\\\1\",\"g\",$4), $5, $6 }' | less -R ; } ; f"
+    changedfiles = diff origin/master.. --stat
+    brdiff = diff origin/master..
+[core]
+    editor = vim
+    autocrlf = false
+[push]
+    default = current
