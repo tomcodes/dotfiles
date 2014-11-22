@@ -87,6 +87,36 @@ set laststatus=2                    " Always show the status line
 set encoding=utf-8                  " Necessary to show Unicode glyphs
 set noshowmode                      " Hide the default mode text (e.g. -- INSERT -- below the status line)
 
+autocmd cursorhold * set nohlsearch
+autocmd cursormoved * set hlsearch
+
+" command! H let @/=""                " Remove search results
+nnoremap <silent> <C-l> :nohl<CR><C-l> " Clears search results
+
+" Abbreviations
+abbrev pft PHPUnit_Framework_TestCase
+
+abbrev gm !php artisan generate:model
+abbrev gc !php artisan generate:controller
+abbrev gmig !php artisan generate:migration
+
+autocmd BufWritePre *.php :%s/\s\+$//e  " Remove trailing whitespaces
+
+nmap ,todo :e todo.txt<cr>          " Edit todo for current project
+
+" Laravel specifics
+nmap <leader>lr :e app/routes.php<cr>
+nmap <leader>lca :e app/config/app.php<cr>127GF(%0
+nmap <leader>lcd :e app/config/database.php<cr>
+nmap <leader>lc :e composer.json<cr>
+
+" Ctrl-p
+map <D-p> :CtrlP<cr>
+map <C-r> :CtrlBufTag<cr>
+set wildignore+=*/vendor/**
+
+nmap :ed :edit %:p:h/               " Create / edit file in current directory
+
 filetype plugin on
 syntax on
 
@@ -119,6 +149,12 @@ Bundle 'joonty/vim-phpqa.git'
 
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
+
+" Ctrl-p
+Bundle 'kien/ctrlp.vim'
+
+" Visual star mapping
+Bundle 'nelstrom/vim-visual-star-search'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
