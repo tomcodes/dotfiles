@@ -90,8 +90,9 @@ set noshowmode                      " Hide the default mode text (e.g. -- INSERT
 autocmd cursorhold * set nohlsearch
 autocmd cursormoved * set hlsearch
 
-" command! H let @/=""                " Remove search results
-nnoremap <silent> <C-l> :nohl<CR><C-l> " Clears search results
+" command! H let @/=""              " Remove search results
+nnoremap H :nohl<cr>                " Clears search results
+" nnoremap <silent> <C-l> :nohl<CR><C-l> " Clears search results
 
 " Abbreviations
 abbrev pft PHPUnit_Framework_TestCase
@@ -128,7 +129,9 @@ syn on
 set nowrapscan
 set foldmethod=marker
 set hlsearch
- 
+
+let g:vim_markdown_folding_disabled=1   " Disable folding for vim-markdown plugin
+
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
 
