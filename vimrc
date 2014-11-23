@@ -26,10 +26,12 @@ set incsearch                   " Make searches case-insensitive.
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase
 set timeout timeoutlen=200 ttimeoutlen=100
-set visualbell                  " no bloody beep!
-set noerrorbells                " no f***ing beep!
+set noeb vb t_vb=               " No bells
 set autowrite                   " save on buffer switch
 set mouse=a
+
+" Hightlight when above 80 chars wide
+" match ErrorMsg '\%>80v.\+'
 
 let mapleader = ","
 let g:mapleader = ","
@@ -55,6 +57,7 @@ nmap <C-l> <C-w>l
 
 " resize vsplit
 nmap <C-v> :vertical resize +5<cr>
+nmap <C-f> :res +5<cr>
 
 nmap <C-b> :NERDTreeToggle<cr>
 
@@ -121,7 +124,7 @@ nmap :ed :edit %:p:h/               " Create / edit file in current directory
 filetype plugin on
 syntax on
 
-set fileformat=unix
+" set fileformat=unix
 set number
 syn on
  
@@ -138,6 +141,31 @@ let php_htmlInStrings = 1 "Coloration des balises HTML
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Allows to close the buffer without actually closing the split
+map fc <Esc>:call CleanClose(1)i<cr>
+map fq <Esc>:call CleanClose(0)<cr>
+
+
+function! CleanClose(tosave)
+if (a:tosave == 1)
+    w!
+endif
+let todelbufNr = bufnr("%")
+let newbufNr = bufnr("#")
+if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+    exe "b".newbufNr
+else
+    bnext
+endif
+
+if (bufnr("%") == todelbufNr)
+    new
+endif
+exe "bd".todelbufNr
+endfunction
+
+
+" vundle section
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -148,7 +176,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " PHP QA Tools For Vim - https://github.com/joonty/vim-phpqa
-Bundle 'joonty/vim-phpqa.git'
+" Bundle 'joonty/vim-phpqa.git'
 
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
