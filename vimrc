@@ -178,6 +178,9 @@ Plugin 'gmarik/Vundle.vim'
 " PHP QA Tools For Vim - https://github.com/joonty/vim-phpqa
 " Bundle 'joonty/vim-phpqa.git'
 
+" Fugitive
+Plugin 'tpope/vim-fugitive'
+
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
 
