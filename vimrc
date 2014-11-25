@@ -181,6 +181,9 @@ Plugin 'gmarik/Vundle.vim'
 " Fugitive
 Plugin 'tpope/vim-fugitive'
 
+" Syntastic
+Plugin 'scrooloose/syntastic'
+
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
 
