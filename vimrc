@@ -60,7 +60,7 @@ nmap <C-v> :vertical resize +5<cr>
 " nmap <C-f> :res +5<cr>
 
 nmap <C-b> :NERDTreeToggle<cr>
-
+"
 " show partial command in status line
 set showcmd
 
@@ -116,6 +116,7 @@ nmap <leader>lc :e composer.json<cr>
 
 " Ctrl-p
 map <D-p> :CtrlP<cr>
+nnoremap <C-S-n> :CtrlP<cr>
 map <C-r> :CtrlBufTag<cr>
 set wildignore+=*/vendor/**
 
