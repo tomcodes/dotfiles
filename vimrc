@@ -47,7 +47,7 @@ nnoremap k gk
 imap jj <esc>
 
 " Auto change directory to match current file
-nnoremap ,cd :cd %:p:h<cr>:pwd<cr>
+nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " easier window management
 nmap <C-h> <C-w>h
@@ -57,7 +57,7 @@ nmap <C-l> <C-w>l
 
 " resize vsplit
 nmap <C-v> :vertical resize +5<cr>
-nmap <C-f> :res +5<cr>
+" nmap <C-f> :res +5<cr>
 
 nmap <C-b> :NERDTreeToggle<cr>
 
@@ -65,7 +65,7 @@ nmap <C-b> :NERDTreeToggle<cr>
 set showcmd
 
 " shortcut to column
-nmap <space> :<cr>
+nmap <space> :<space>
 
 " create split below
 nmap :sp :rightbelow sp<cr>
