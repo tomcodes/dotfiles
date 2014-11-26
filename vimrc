@@ -39,6 +39,11 @@ let g:mapleader = ","
 " Fast save
 nmap <leader>w :w!<cr>
 
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
 " Down is really the next line
 nnoremap j gj
 nnoremap k gk
