@@ -39,6 +39,9 @@ let g:mapleader = ","
 " Fast save
 nmap <leader>w :w!<cr>
 
+" Close current buffer but don't mess with everything, please
+nnoremap <leader>q :bp<cr>:bd #<cr>
+
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
