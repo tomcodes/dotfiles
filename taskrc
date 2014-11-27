@@ -27,7 +27,9 @@ data.location=~/.task
 #include /usr/local/share/doc/task/rc/light-256.theme
 color.tag.shopping=rgb023
 color.tag.music=rgb525
-color.tag.in=rgb111
+color.tag.in=rgb222
+color.tag.someday=rgb111
 
 # Custom priorities
 urgency.user.tag.in.coefficient=-5.0          # specific tag
+urgency.user.tag.someday.coefficient=-15.0          # specific tag
