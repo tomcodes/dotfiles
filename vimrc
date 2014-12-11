@@ -193,6 +193,9 @@ Plugin 'tpope/vim-fugitive'
 " Syntastic
 Plugin 'scrooloose/syntastic'
 
+" Sparkup
+Plugin 'tristen/vim-sparkup'
+
 " Powerline
 Bundle 'Lokaltog/vim-powerline'
 
