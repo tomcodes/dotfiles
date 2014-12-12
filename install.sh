@@ -35,11 +35,11 @@ install_zsh () {
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone Prezt
     if [[ ! -d $dir/.zprezto/ ]]; then
-        git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
         setopt EXTENDED_GLOB
-        for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-            ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+        for rcfile in ~/.zprezto/runcoms/^README.md(.N); do
+            ln -s "$rcfile" "~/.${rcfile:t}"
         done
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
