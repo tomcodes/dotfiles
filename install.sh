@@ -37,11 +37,14 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     if [[ ! -d $dir/.zprezto/ ]]; then
         git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
-        for rcfile in ~/.zprezto/runcoms/z*; do
-            if [[ ! -h ${rcfile:t} ]]; then
-                ln -s "$rcfile" "${rcfile:t}"
-            fi
-        done
+        echo "====================================="
+        echo "Be sure to run the following command:"
+        echo "setopt EXTENDED_GLOB
+              for rcfile in \"${ZDOTDIR:-$HOME}\"/.zprezto/runcoms/^README.md(.N); do
+                  ln -s \"$rcfile\" \"${ZDOTDIR:-$HOME}/.${rcfile:t}\"
+              done"
+        echo "====================================="
+
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
