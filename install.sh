@@ -62,7 +62,7 @@ fi
 }
 
 install_vundle () {
-    if [[ ! -d $dir/vim/Vundle.vim ]]; then
+    if [[ ! -d $dir/vim/bundle/Vundle.vim ]]; then
         git clone https://github.com/gmarik/Vundle.vim.git $dir/vim/bundle/Vundle.vim
     fi
 }
