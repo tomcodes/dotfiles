@@ -77,4 +77,4 @@ fi
 
 if [[ ! -d $dir/vim/swap ]]; then
     mkdir $dir/vim/swap
-]]
+fi
