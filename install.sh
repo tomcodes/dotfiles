@@ -70,3 +70,11 @@ install_vundle () {
 install_zsh
 
 install_vundle
+
+if [[ ! -d $dir/vim/backup ]]; then
+    mkdir $dir/vim/backup
+fi
+
+if [[ ! -d $dir/vim/swap ]]; then
+    mkdir $dir/vim/swap
+]]
