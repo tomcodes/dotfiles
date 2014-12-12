@@ -38,7 +38,9 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
         git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
         for rcfile in ~/.zprezto/runcoms/z*; do
-            ln -s "$rcfile" "${rcfile:t}"
+            if [[ ! -h ${rcfile:t} ]]; then
+                ln -s "$rcfile" "${rcfile:t}"
+            fi
         done
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
