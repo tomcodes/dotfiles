@@ -37,9 +37,8 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     if [[ ! -d $dir/.zprezto/ ]]; then
         git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
-        setopt EXTENDED_GLOB
         for rcfile in ~/.zprezto/runcoms/z*; do
-            ln -s "$rcfile" "~/.${rcfile:t}"
+            ln -s "$rcfile" "${rcfile:t}"
         done
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
