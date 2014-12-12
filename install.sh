@@ -38,7 +38,7 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
         git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 
         setopt EXTENDED_GLOB
-        for rcfile in ~/.zprezto/runcoms/^README.md(.N); do
+        for rcfile in ~/.zprezto/runcoms/z*; do
             ln -s "$rcfile" "~/.${rcfile:t}"
         done
     fi
