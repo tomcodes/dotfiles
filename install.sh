@@ -71,6 +71,16 @@ install_vundle () {
     fi
 }
 
+install_vimpager () {
+    if [[ ! -f /usr/local/bin/vimpager ]]; then
+        cd ~/ && mkdir tmp;
+        cd tmp
+        git clone git://github.com/rkitover/vimpager
+        cd vimpager
+        sudo make install
+    fi
+}
+
 install_zsh
 
 install_vundle
@@ -82,3 +92,5 @@ fi
 if [[ ! -d $dir/vim/swap ]]; then
     mkdir $dir/vim/swap
 fi
+
+install_vimpager
