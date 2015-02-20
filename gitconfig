@@ -22,3 +22,5 @@
     default = current
 [http]
 	sslVerify = false
+[init]
+	templatedir = /home/thomas/.git-templates
