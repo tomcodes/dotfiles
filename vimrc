@@ -28,7 +28,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set timeout timeoutlen=200 ttimeoutlen=100
 set noeb vb t_vb=               " No bells
 set autowrite                   " save on buffer switch
-set mouse=a
+set mouse-=a
 
 " Hightlight when above 80 chars wide
 " match ErrorMsg '\%>80v.\+'

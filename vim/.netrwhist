@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/thomas/dev/playground/soundshould/application/config'
-let g:netrw_dirhist_2='/home/thomas/dev/playground/calckata'
-let g:netrw_dirhist_3='/home/thomas/dev/projects/appleseedhq.github.io/.git'

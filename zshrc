@@ -16,9 +16,4 @@ prompt sorin
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PAGER=/usr/local/bin/vimpager
-export VIMCAT=/usr/local/bin/vimcat
-
-alias less=$PAGER
-alias zless=$PAGER
-alias cat=$VIMCAT
+export LC_ALL=$LANG
