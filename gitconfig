@@ -7,6 +7,7 @@
     ci = commit
     br = branch
     co = checkout
+    wip = !git add -u && git commit -m "WIP"
     lgbr = log --no-merges master.. --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Cgreen%cd%Creset' --abbrev-commit
     cutelog = log --pretty=format:\"%h - %an - %ar - %s\" --graph
     shallipush = log origin/master..master --stat --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit
