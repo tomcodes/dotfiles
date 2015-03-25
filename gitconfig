@@ -10,7 +10,7 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Cgreen%cd%Creset' --abbrev-commit
     lgbr = !git lg --no-merges master..
     standup = log --since yesterday --oneline --author thomas
-    mine = lg --author $(whoami)
+    mine = !git lg --author $(whoami)
 
     # Move around
     br = branch
