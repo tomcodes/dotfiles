@@ -7,8 +7,8 @@
 
     # Log
     st = status
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    lgbr = log --no-merges master.. --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Cgreen%cd%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Cgreen%cd%Creset' --abbrev-commit
+    lgbr = !git lg --no-merges master..
     standup = log --since yesterday --oneline --author thomas
     mine = log --author $(whoami) --oneline
 
