@@ -25,7 +25,7 @@
 
     # Commit
     ci = commit
-    wip = !git add -u && git commit -m "WIP"
+    wip = !git add -u && git commit -m "[WIP]"
     showfile = diff-tree --no-commit-id --name-only -r
 
 [core]
