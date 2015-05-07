@@ -39,6 +39,9 @@ let g:mapleader = ","
 " Fast save
 nmap <leader>w :w!<cr>
 
+" Saving with sudo tee trick
+cmap w!! w !sudo tee > /dev/null %
+
 " Close current buffer but don't mess with everything, please
 nnoremap <leader>q :bp<cr>:bd #<cr>
 
