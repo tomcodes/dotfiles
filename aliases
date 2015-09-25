@@ -1,0 +1,2 @@
+# Avoid sending pubkey when connecting to untrusted box
+alias sshp⁼"ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthentication=no"
