@@ -10,6 +10,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
 autoload -Uz promptinit
 promptinit
 prompt sorin
