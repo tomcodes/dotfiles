@@ -57,7 +57,7 @@ else
     if [[ $platform == 'Linux' ]]; then
         if [ -n "$(command -v yum)" ]; then
             sudo yum install zsh
-        elif
+        else
             sudo apt-get install zsh
         fi
         install_zsh
