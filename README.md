@@ -1,4 +1,7 @@
 ## Installation
 ```sh
-$ curl -s https://raw.githubusercontent.com/tomcodes/dotfiles/master/init | bash
+$ git clone https://github.com/tomcodes/dotfiles.git
+$ cd dotfiles
+$ ./local-install
 ```
+
