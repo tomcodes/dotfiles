@@ -16,6 +16,9 @@
     br = branch
     co = checkout
 
+    # Pull
+    purr = pull --rebase
+
     # Review changes
     dc = diff --cached
     changedfiles = diff origin/master.. --stat
