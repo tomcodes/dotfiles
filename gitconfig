@@ -22,7 +22,7 @@
     # Review changes
     dc = diff --cached
     changedfiles = diff origin/master.. --stat
-    brdiff = diff origin/master..
+    diffo = diff origin/master..
     shallipush = log origin/master..master --stat --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr)' --abbrev-commit
 
     # Commit
