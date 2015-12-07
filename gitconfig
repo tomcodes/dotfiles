@@ -32,7 +32,7 @@
     showfile = diff-tree --no-commit-id --name-only -r
 
     # Stash
-    stashow = !"f() { if [ -z \"$1\" ]; then stashindex='1'; else stashindex=\"$1\"; fi; git stash show -p \"stash@{$stashindex}\"; }; f"
+    stashow = !"f() { if [ -z \"$1\" ]; then stashindex='0'; else stashindex=\"$1\"; fi; git stash show -p \"stash@{$stashindex}\"; }; f"
 
 [core]
     editor = vim
