@@ -14,6 +14,10 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+if [ -f ~/.functions ]; then
+    . ~/.functions
+fi
+
 autoload -Uz promptinit
 promptinit
 prompt sorin
