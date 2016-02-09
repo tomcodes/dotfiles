@@ -22,13 +22,47 @@ echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
-done
+setup_aliases () {
+    # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
+    for file in $files; do
+        echo "Moving any existing dotfiles from ~ to $olddir"
+        mv ~/.$file ~/dotfiles_old/
+        echo "Creating symlink to $file in home directory."
+        ln -s $dir/$file ~/.$file
+    done
+}
+
+install_vim () {
+    if which vim >/dev/null; then
+        echo "vim is already installed, good on you!"
+    else
+        sudo apt-get install vim
+    fi
+}
+
+install_git () {
+    if which git >/dev/null; then
+        echo "git is already installed, good on you!"
+    else
+        sudo apt-get install git
+        echo
+        read -p "Seems like it's your first git install, would you like yo setup basic config? " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            echo -n "Please enter your git username: "
+            read git_username
+            git config --global user.name $git_username
+
+            echo
+            echo -n "Please enter your git email address: "
+            read git_useremail
+            git config --global user.email $git_useremail
+
+            echo
+            echo "Your git config has been setup in ~/.gitconfig"
+        fi
+    fi
+}
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
@@ -76,9 +110,19 @@ install_vundle () {
     vim +PluginInstall +qall
 }
 
+install_git
+
+install_vim
+
 install_zsh
 
 install_vundle
+
+read -p "Do you want to setup aliases? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    setup_aliases
+fi
 
 if [[ ! -d $dir/vim/backup ]]; then
     mkdir $dir/vim/backup
