@@ -64,7 +64,7 @@ install_git () {
     fi
 
     # Installing diff-so-fancy if needed
-    if [ -d ~/bin/diff-so-fancy ]; then
+    if [ ! -d ~/bin/diff-so-fancy ]; then
         cd ~/bin
         git clone https://github.com/stevemao/diff-so-fancy.git
         git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
