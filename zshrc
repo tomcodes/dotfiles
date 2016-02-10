@@ -18,10 +18,12 @@ if [ -f ~/.functions ]; then
     . ~/.functions
 fi
 
+if [ -f ~/.path ]; then
+    . ~/.path
+fi
+
 autoload -Uz promptinit
 promptinit
 prompt sorin
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export LC_ALL=$LANG

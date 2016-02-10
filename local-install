@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="aliases bashrc fonts gitconfig exports vimrc vim zshrc zpreztorc"    # list of files/folders to symlink in homedir
+files="aliases bashrc fonts gitconfig exports path vimrc vim zshrc zpreztorc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -61,6 +61,13 @@ install_git () {
             echo
             echo "Your git config has been setup in ~/.gitconfig"
         fi
+    fi
+
+    # Installing diff-so-fancy if needed
+    if [ -d ~/bin/diff-so-fancy ]; then
+        cd ~/bin
+        git clone https://github.com/stevemao/diff-so-fancy.git
+        git config --global core.pager "diff-so-fancy | less --tabs=1,5 -R"
     fi
 }
 
