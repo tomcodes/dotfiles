@@ -44,3 +44,6 @@
 
 [http]
     sslVerify = false
+[user]
+	name = tomcodes
+	email = tomcodes@users.noreply.github.com
