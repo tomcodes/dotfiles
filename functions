@@ -23,6 +23,18 @@ mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
+# Weather forecast
+weather() {
+    if [ "$1" ] ; then
+        city=$1
+    else
+        city=$WEATHER_CITY
+    fi
+
+    curl http://wttr.in/$city
+
+}
+
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 targz() {
     local tmpFile="${@%/}.tar"
