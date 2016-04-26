@@ -26,4 +26,5 @@ autoload -Uz promptinit
 promptinit
 prompt sorin
 
-export LC_ALL=$LANG
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
