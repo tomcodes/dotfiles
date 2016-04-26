@@ -1,0 +1,21 @@
+#!/bin/sh
+
+TEXT_DEFAULT="\\033[0;39m"
+TEXT_INFO="\\033[1;32m"
+TEXT_ERROR="\\033[1;31m"
+TEXT_YELLOW="\\033[1;33m"
+echo -e "$TEXT_YELLOW""[ >>> PRE-COMMIT START ]""$TEXT_DEFAULT"
+FILES_PATTERN='(\..+)?$'
+FORBIDDEN="console\.(debug|info|log|warn)\([^)]*\)|HACK*|phpinfo\([^)]*\)|var_dump\([^)]*\)|print_r\([^)]*\)|<<<<<<<|=======|>>>>>>>"
+
+if git diff --cached --name-only | \
+    grep -E $FILES_PATTERN | \
+    xargs grep -E --with-filename -n $FORBIDDEN | \
+    grep -v '//';
+then
+    echo -e "$TEXT_ERROR[ >>> COMMIT REJECTED ]" &&
+    echo -e "$TEXT_ERROR""If you absolutely need to commit this use git commit --no-verify"
+    exit 1;
+fi
+
+echo -e "$TEXT_YELLOW""[ >>> PRE-COMMIT DONE ]""$TEXT_DEFAULT"
