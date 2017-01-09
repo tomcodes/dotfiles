@@ -30,6 +30,9 @@
     ci = commit
     wip = !git add -u && git commit -m "[WIP]"
     showfile = diff-tree --no-commit-id --name-only -r
+    
+    # Merge
+    mergedry = !git merge --no-commit --no-ff
 
     # Stash
     stashow = !"f() { if [ -z \"$1\" ]; then stashindex='0'; else stashindex=\"$1\"; fi; git stash show -p \"stash@{$stashindex}\"; }; f"
