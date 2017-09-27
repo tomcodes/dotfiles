@@ -2,6 +2,9 @@
     ui = auto
 
 [alias]
+    # Git alias typo
+    git = !exec git
+
     # Config
     ec = config --global -e
 
@@ -47,6 +50,11 @@
 
 [http]
     sslVerify = false
+
+[rerere]
+    enabled = 1
+
 [user]
-	name = tomcodes
-	email = tomcodes@users.noreply.github.com
+    name = tomcodes
+    email = tomcodes@users.noreply.github.com
+    useconfigonly = true
