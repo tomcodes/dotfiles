@@ -40,6 +40,9 @@
     # Stash
     stashow = !"f() { if [ -z \"$1\" ]; then stashindex='0'; else stashindex=\"$1\"; fi; git stash show -p \"stash@{$stashindex}\"; }; f"
 
+    # Snapshot - git stash then re-apply stash
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+
 [core]
     editor = vim
     autocrlf = input
