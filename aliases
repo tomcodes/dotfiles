@@ -1,2 +1,12 @@
 # Avoid sending pubkey when connecting to untrusted box
 alias sshp="ssh -o PreferredAuthentications=keyboard-interactive -o PubkeyAuthentication=no"
+alias t="php artisan migrate:refresh --seed && vendor/bin/phpunit"
+alias p="cd ~/Code/Proxilib/webapp"
+
+# Laravel specific
+alias m="php artisan migrate"
+alias ms="php artisan migrate:status"
+alias mfs="php artisan migrate:refresh --seed"
+alias mr="php artisan migrate:rollback"
+
+alias sublime="/opt/sublime_text_3/sublime_text"
