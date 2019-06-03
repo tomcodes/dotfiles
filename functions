@@ -244,3 +244,13 @@ isup() {
         notify-send --urgency=low "$uri is up"
     fi
 }
+
+# Git merge
+merge() {
+    git purr && git co master && git co $1 && git reset --hard origin/$1 && git rebase -i master && git push --force-with-lease && git co master && git merge --ff-only $1 && clear && git st
+}
+
+pushndelete() {
+    git push && git push origin --delete $1
+}
+
