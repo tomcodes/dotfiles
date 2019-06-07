@@ -30,3 +30,4 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH=PATH=$PATH:~/bin/diff-so-fancy
 
+PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
