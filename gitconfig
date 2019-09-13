@@ -15,6 +15,7 @@
     standup = log --since yesterday --oneline --author thomas
     mine = !git lg --author $(whoami)
     around = !"f() { if [ -z \"$2\" ]; then duration='1'; else duration=\"$2\"; shift; fi; d=$1; shift; if [ -z \"$d\" ] ; then echo 'Usage: git around 2015-11-01 [4]'; else git log --after=$( date +\"%Y-%m-%d\" -d \"$d -$duration days\" ) --before=$( date +\"%Y-%m-%d\" -d \"$d +$duration days\" ) $* ; fi; }; f"
+    recent = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
 
     # Move around
     br = branch
