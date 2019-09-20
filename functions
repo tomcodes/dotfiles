@@ -189,35 +189,12 @@ v() {
     fi
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
-o() {
-    if [ $# -eq 0 ]; then
-        xdg-open .  > /dev/null 2>&1
-    else
-        xdg-open "$@" > /dev/null 2>&1
-    fi
-}
-
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
 tre() {
     tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
-}
-
-# Get colors in manual pages
-man() {
-    env \
-        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-        LESS_TERMCAP_md=$(printf "\e[1;31m") \
-        LESS_TERMCAP_me=$(printf "\e[0m") \
-        LESS_TERMCAP_se=$(printf "\e[0m") \
-        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-        LESS_TERMCAP_ue=$(printf "\e[0m") \
-        LESS_TERMCAP_us=$(printf "\e[1;32m") \
-        man "$@"
 }
 
 # Use feh to nicely view images
